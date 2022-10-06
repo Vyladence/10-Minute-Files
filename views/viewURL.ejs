@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" media="only screen and (max-width: 600px)" href="resources/urlpage/mobile.css" />
+		<link rel="stylesheet" media="only screen and (min-width: 601px)" href="resources/urlpage/styles.css" />
+		<title>10 Minute Files</title>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="resources/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="resources/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="resources/favicons/favicon-16x16.png">
+		<link rel="manifest" href="resources/favicons/site.webmanifest">
+		<link rel="mask-icon" href="resources/favicons/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="resources/favicons/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="resources/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body> 
+		<% fileURL = data %>
+		<div class="flexColumn">
+			<div class="flexRow centered">
+				<div id="copiedAlertDiv" style="transform: translateY(-140%);box-sizing:border-box; text-align: center;">Copied!</div>
+			</div>
+			<div class="mainWrapper" data-link="<%= fileURL %>" onclick='copyLink(this)'>
+				<p class="mainText">
+					File valid for 10 Minutes! Click to copy.
+				</p>
+				<br>
+				<p class="mainText link">
+					<%= fileURL.replace(/\//g, "​/") %>
+				</p>
+			</div>
+		</div>
+		<script src="./resources/urlpage/scripts.js">
+		</script> 
+	</body>
+</html>
+

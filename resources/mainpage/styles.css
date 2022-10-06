@@ -1,0 +1,76 @@
+body {
+  display:flex;
+  justify-content: center;
+  font-family: "Lato", "Helvetica", Helvetica, sans-serif;
+  background: #252525;
+}
+
+.form-wrapper {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  outline: 1px dashed #ccc;
+  outline-offset: 3px;
+  border-radius: 20px;
+  margin: 100px auto;
+  padding: 20px;
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.plainlabel {
+  padding-left: 10px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.plainlabeldiv {
+  line-height: 100%;
+  text-align: center;
+}
+
+#fileSizeDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+
+.mainform {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 500px;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  height: 40px;
+  margin: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.buttonLabel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button:hover {
+  background: #ddd;
+}
+
+#fileUpload {
+  display: none;
+}
