@@ -36,6 +36,9 @@ class FileManager {
     }
 
     constructor() {
+        fs.mkdirSync(this.#PERMFILES_PATH, { recursive: true }, (err) => {if (err) throw err})
+        fs.mkdirSync(this.#TEMPFILES_PATH, { recursive: true }, (err) => {if (err) throw err})
+        
         this.#currentFiles = new Map();
         this.#loadSnapshot();
 
@@ -46,9 +49,6 @@ class FileManager {
 
         this.#saveSnapshot();
         this.#log("Startup complete — active_downloads reset");
-
-        fs.mkdir(this.#PERMFILES_PATH, { recursive: true }, (err) => {if (err) throw err})
-        fs.mkdir(this.#TEMPFILES_PATH, { recursive: true }, (err) => {if (err) throw err})
 
         // Watchdog
         setInterval(async () => {
