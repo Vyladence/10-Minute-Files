@@ -1,0 +1,37 @@
+<link href=/desktop_stylesheets/uploader.css rel="stylesheet">
+<link href=/mobile_stylesheets/uploader.css rel="stylesheet" media="screen and (max-width: 768px)">
+
+<div id="double-wrapper">
+	<title>10 Minute Files</title>
+	<div class="main-wrapper" id="main-form-wrapper">
+	    <form id="main-form" class="main-form" action="/" method="post" enctype="multipart/form-data">
+			<input type="file" class="hidden" id="file-input" name="mainFile" onchange="changeText(this.files)">
+			<label class="button" id="file-selector" for="file-input">
+				<p class="button-label filename" id="file-selector-button-text"></p>
+				<p class="filesize" id="file-selector-filesize">Max 2GB</p>
+			</label>
+			<input class="hidden" type="submit" id="upload-button" disabled="">
+			<label class="disabled button" id="stylized-upload-button" for="upload-button">
+				<p class="button-label">Upload</p>
+			</label>
+		</form>
+
+		<div id="progress-wrapper">
+			<div id="progress-bar">
+				<div class="foreground" id="upload-progress"></div>
+				<div class="background"></div>
+			</div>
+			<div id="upload-percentage">0%</div>
+		</div>
+	</div>
+	<!-- Inline styles are necessary -->
+	<div id="page-mask"></div>
+	<div id="drag-upload-modal">
+		<div id="upload-drop-box">
+			<div>Drop File Here</div>
+		</div>
+	</div>
+	<div class="tos-disclaimer">By uploading a file to 10 Minute Files, you are agreeing to our <a href=/about#terms>Terms of Service</a></div>
+</div>
+<script src=/scripts/uploader.js></script> 
+

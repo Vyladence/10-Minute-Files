@@ -1,0 +1,24 @@
+.about-container {
+    padding: 20px 16px;
+}
+
+.about-container .title {
+    font-size: 24px;
+}
+
+.about-container .description {
+    font-size: 16px;
+}
+
+.about-container .tos-section {
+    padding: 16px;
+}
+
+.about-container .tos-title {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.about-container .tos-content {
+    font-size: 14px;
+}

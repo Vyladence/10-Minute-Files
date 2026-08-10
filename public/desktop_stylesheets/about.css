@@ -1,0 +1,57 @@
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #eee;
+    font-family: Outfit, Arial, sans-serif;
+    background-color: rgba(0,0,0,0.6);  
+    box-shadow: rgb(0, 0, 0) 0px 0px 20px;
+    border-radius: 30px;
+}
+
+.about-container .section {
+    margin-bottom: 40px;
+}
+
+.about-container .title {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+.about-container .description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.about-container .tos-section {
+    background: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.about-container .tos-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+    margin-top: 0;
+}
+
+.about-container .tos-content {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #aaa;
+    margin: 0;
+}
+
+.about-container .contact-email {
+    color: #4d1cf7;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.about-container .contact-email:hover {
+    text-decoration: underline;
+}

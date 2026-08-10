@@ -1,0 +1,35 @@
+@media screen and (max-width: 768px) {
+    .text .number { 
+        font-size: 220px;
+        letter-spacing: -15px;
+        padding-right: 17px;
+    }
+
+    .text .name {
+        font-size: 38px;
+        letter-spacing: 12px;
+        padding-left: 12px;
+    }
+
+    .homebutton {
+        padding: 8px 30px;
+        font-size: 12px;
+        letter-spacing: 3px;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .text .number { 
+        font-size: 130px;
+        letter-spacing: -10px;
+        padding-right: 11px;
+    }
+
+    .text .name {
+        font-size: 24px;
+        letter-spacing: 8px;
+        padding-left: 8px;
+        margin-top: -30px;
+    }
+}

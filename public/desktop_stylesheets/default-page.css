@@ -1,0 +1,17 @@
+.container {
+    height: 100%
+}
+
+/* ---- tsparticles container ---- */ 
+#tsparticles { 
+    position: fixed;
+    width: 100vw; 
+    height: 100%; 
+    background: #000;
+    z-index: -5;
+}
+
+#tsparticles>canvas {
+    opacity: 0;
+    transition: 1s;
+}   

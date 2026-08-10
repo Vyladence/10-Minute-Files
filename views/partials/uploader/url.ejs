@@ -1,0 +1,34 @@
+<link href=/desktop_stylesheets/uploader.css rel="stylesheet">
+<link href=/mobile_stylesheets/uploader.css rel="stylesheet" media="screen and (max-width: 768px)">
+
+<div id="double-wrapper">
+	<title>10 Minute Files - <%= data.fileUID %></title>
+	<div class="main-wrapper" id="main-form-wrapper">
+		<link href=/desktop_stylesheets/url.css rel="stylesheet">
+		<link href=/mobile_stylesheets/url.css rel="stylesheet" media="screen and (max-width: 768px)">
+		
+		<div class="confirmation-text">
+			File uploaded! Link will be valid for <span id="file-countdown" data-server-time="<%= data.serverTime %>" data-file-duration="<%= data.fileDuration %>" data-uploaded-at="<%= data.fileUploadedAt %>"></span>
+		</div>
+		<div class="input-wrapper">
+			<input class="link-box" readonly="readonly" value="<%= data.fileLink %>" onclick="this.select()" tabindex="0">
+			<div class="link-button-container">
+				<div class="link-button" onclick="copyText(this, '<%= data.fileLink %>')" title="Copy Link" tabindex="0" onmouseleave="document.activeElement.blur()"><img src="/icons/copy.svg"></div>
+				<div class="link-button" onclick="showQRCode()" title="Show QR Code" tabindex="0" onmouseleave="document.activeElement.blur()"><img src="/icons/qrcode.svg"></div>
+				<!-- <div class="link-button" onclick="showCLIModal()" title="Show CLI Commands" tabindex="0" onmouseleave="document.activeElement.blur()"><img src="/icons/terminal.svg"></div> -->
+			</div>
+		</div>
+		<!-- Inline styles are necessary -->
+		<div id="page-mask" style="opacity: 0;" onclick="hideQRCode()"></div>
+		<div id="qr-modal" style="opacity: 0; position: absolute;">
+			<!-- QR code content -->
+			<img class="qr-modal-x" src="/icons/x.svg" onclick="hideQRCode()">
+			<img class="qr-modal-code" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=<%= data.fileLink %>">
+		</div>
+		
+		<link href=/desktop_stylesheets/uploader.css rel="stylesheet">
+		<link href=/mobile_stylesheets/uploader.css rel="stylesheet" media="screen and (max-width: 768px)">		
+	</div>
+</div>
+
+<script src=/scripts/url.js></script>

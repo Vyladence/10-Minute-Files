@@ -1,0 +1,49 @@
+@media screen and (max-width: 768px) {
+    #double-wrapper {
+        margin-top: -20px;
+        padding: 0 10px;
+    }
+
+    .main-wrapper {
+        margin-inline: 5px;
+    }
+
+    .button {
+        width: 100%;
+        min-height: 50px;
+        align-items: center;
+    }
+
+    .button-label span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #progress-bar .background {
+        position: absolute;
+        width: calc(100% - 10px);
+        height: 100%;
+        border-radius: 20px;
+        outline: 1px solid #fff;
+        outline-offset: -1px;
+        background: transparent;
+    }
+
+    #progress-bar .foreground {
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg,#8419b6 0,#4d1cf7 100%);
+        border-radius: 20px;
+        min-width: 16px;
+        transition: width 100ms;
+    }
+
+    #file-selector-button-text::before {
+        content: var(--name, "Tap to select a file");
+    }
+
+    .tos-disclaimer {
+        font-size: 10px;
+      }
+}

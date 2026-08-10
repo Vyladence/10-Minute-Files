@@ -1,0 +1,120 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    width: 100%;
+    background: #111;
+    box-shadow: #111 0px 0px 5px;
+    gap: 30px;
+    flex-shrink: 0;  
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+div.section {
+    scroll-margin-top: 110px
+}
+
+.header .site-logo {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-left: 20px;
+    width: fit-content;
+    left: 0px;
+    right: 0px;
+    text-decoration: none;
+}
+.header .site-logo > .icon {
+    height: 40px;
+    margin-block: auto;
+}
+.header .site-logo > .name {
+    margin-block: auto;
+    color: white;
+    font-size: 25px;
+    margin-left: 8px;
+    font-family: Outfit;
+}
+
+.header-nav {
+    display:flex;
+    gap: inherit;
+}
+.header-link {
+    font-family: Outfit;
+    text-decoration: none;
+    height: fit-content;
+    font-size: 16px;
+    color: #111;
+    margin-block: auto;
+    position: relative;
+    cursor: pointer;
+    transition: 250ms;
+    color: white;
+}
+
+/* Margins are 1.9px instead of 2px due to scaling edge cases
+ where sometimes one horizontal bar would appear thicker than
+ the other. */
+.header-link:before {    
+    content: "";
+    margin-top: -1.9px;
+    display: block;
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    background: white;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  .header-link:hover:before { 
+    width: 100%;
+    left: 0;
+  }
+
+.header-link:after {
+    content: "";
+    display: block;
+    margin-top: 1.9px;
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    background: white;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  .header-link:hover:after { 
+    width: 100%;
+    left: 0;
+  }
+
+.header .spacer {
+    display: flex;
+    margin: auto;
+}
+
+
+/* 
+.header span {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50vw;
+    top: 35px;
+}
+
+.header span > a {
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #E32636;
+    color: black;
+    text-decoration: none;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
+ */

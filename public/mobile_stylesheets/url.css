@@ -1,0 +1,60 @@
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .confirmation-text {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .input-wrapper {
+        width: calc(100% - 20px);
+        max-width: 100%;
+        margin: 0 10px;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    .link-box {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+
+    .link-button-container {
+        flex-shrink: 0;
+    }
+
+    .link-button {    
+        width: 48px;
+        height: 48px;
+    }
+
+    .link-button img {
+        height: 24px;
+        width: 24px;
+    }
+
+    .copied-alert-div {
+        font-size: 11px;
+        margin-inline: auto;
+        margin-top: -22px;
+    }
+
+    #qr-modal {    
+        left: calc(50% - 166px);
+    }
+
+    .qr-modal-x {
+        margin-bottom: 5px;
+    }
+
+    .qr-modal-code {
+        margin: 15px;
+    }
+
+    .qr-modal-code img {
+        max-width: 100%;
+        height: auto;
+    }
+}

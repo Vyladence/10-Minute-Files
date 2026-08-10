@@ -1,0 +1,163 @@
+.bitcoin {
+  --main-color: #f8b016;
+  --background-color: #f8b01630;
+}
+
+.monero {
+  --main-color: #fa5d00;
+  --background-color: #fa5d0030;
+}
+
+.ethereum {
+  --main-color: #5563ff;
+  --background-color: #5563ff30;
+}
+
+.solana {
+  --main-color: #40019d;
+  --background-color: #40019d30;
+}
+
+.litecoin {
+  --main-color: #1550bc;
+  --background-color: #1550bc30;
+}
+
+.dogecoin {
+  --main-color: #bb9b2a;
+  --background-color: #bb9b2a30;
+}
+
+.crypto-address-container {
+  height:50px;
+  border-radius:20px;
+  outline:1px solid var(--main-color);
+  background: var(--background-color);
+  display:flex;
+  padding:20px;
+  gap:20px
+}
+
+.currency-icon {
+  height:40px;
+  width:40px;
+  margin:5px;
+}
+
+.textbox-wrapper {
+  width: 100%;
+  border-radius: 10px;
+  outline: inherit;
+  display: flex;
+}
+
+.address-box {
+  outline: none;
+  height:100%;
+  width:100%;
+  background: none;
+  display: flex;
+  color: inherit;
+  border: none;
+  cursor: text;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: monospace;
+  padding-left: 16px;
+}
+
+.link-button-container {
+  display: flex;
+  width: fit-content;
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+.link-button {
+  display: flex;
+  cursor: pointer;
+  transition: 100ms;
+  width: 47px;
+  border-left: 1px var(--main-color) solid;
+}
+
+.link-button img {
+  height: 24px;
+  width: 24px;
+  margin: auto;
+}
+
+.link-button:active {
+  transform: translateY(1px);
+}
+
+.link-button:focus {
+  outline: none;
+}
+
+.link-button:hover {
+  filter: brightness(0.8)
+}
+
+#page-mask {
+background: rgba(0, 0, 0, 0.6);
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: 6;
+transition: opacity 0.3s ease;
+pointer-events: none;
+opacity: 0;
+}
+
+#page-mask.active {
+opacity: 1;
+pointer-events: all;
+}
+
+#qr-modal {
+position: absolute;
+left: calc(50% - 170px);
+top: calc(50% - 190px);
+z-index: 1000;
+/* your modal styling */
+opacity: 0;
+transform: scale(0.8);
+transition: opacity 0.25s ease, transform 0.25s ease;
+display:flex;
+flex-direction: column;
+background-color:#111111;
+border:#fff solid 1px;
+border-radius:10px;
+pointer-events: none;
+}
+
+#qr-modal.active {
+opacity: 1;
+transform: scale(1);
+pointer-events: all;
+}
+
+.qr-modal-x {
+  height: 20px;
+  width: 20px;
+  margin-right: 20px;
+  margin-left: auto;
+  margin-top: 20px;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+.qr-modal-x:hover {
+  transform: rotate(90deg);
+}
+
+.qr-modal-code {
+  margin: 20px;
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+}
+

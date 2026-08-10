@@ -1,0 +1,156 @@
+.confirmation-text {
+  width: 100%;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+  z-index: 5;
+  text-shadow: 0 0 5px black;
+}
+
+.confirmation-text > span {
+  width: 30px;
+  display: inline-block;
+  text-align: left;
+}
+
+
+input:focus {
+  outline: none;
+}
+
+.input-wrapper {
+  background: #222;
+  display: flex;
+  width: 560px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  color: #fff;
+  height: fit-content;
+  min-height: 50px;
+  padding-left: 16px;
+  overflow: hidden;
+  z-index: 5;  
+  box-sizing: border-box;
+}
+
+.link-box {
+  background: inherit;
+  display: flex;
+  color: inherit;
+  border: none;
+  cursor: text;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: monospace;
+  width: 100%;
+}
+
+.link-button-container {
+  display: flex;
+  width: fit-content;
+  margin-right: 0px;
+  margin-left: auto;
+}
+
+.link-button {
+  display: flex;
+  cursor: pointer;
+  transition: 100ms;
+  width: 47px;
+  border-left: 1px #ccc solid;
+}
+
+.link-button img {
+  height: 24px;
+  width: 24px;
+  margin: auto;
+}
+
+.link-button:active {
+  transform: translateY(1px);
+}
+
+.link-button:focus {
+  outline: none;
+  background-color: #333;
+}
+
+.link-button:hover {
+  background-color: #333
+}
+
+.copied-alert-div {
+  display: flex;
+  font-size: 12px;
+  color: #fff;
+  background-color: #161616;
+  border-radius: 5px;
+  padding-inline: 8px;
+  padding-block: 4px;
+  margin-top: -26px;
+  margin-bottom: 5px;
+  margin-inline: auto;
+  transition: 100ms;
+  z-index: 1;
+}
+
+#page-mask {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 6;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#page-mask.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#qr-modal {
+  position: absolute;
+  left: calc(50% - 170px);
+  z-index: 1000;
+  /* your modal styling */
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  display:flex;
+  flex-direction: column;
+  background-color:#111111;
+  border:#fff solid 1px;
+  border-radius:10px;
+  pointer-events: none;
+}
+
+#qr-modal.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+.qr-modal-x {
+  height: 20px;
+  width: 20px;
+  margin-right: 20px;
+  margin-left: auto;
+  margin-top: 20px;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+.qr-modal-x:hover {
+  transform: rotate(90deg);
+}
+
+.qr-modal-code {
+  margin: 20px;
+  height: 300px;
+  width: 300px;
+}
