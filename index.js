@@ -13,7 +13,7 @@ app.use(express.static('public'))
 
 app.listen(process.env['PORT'] || 8080);
 
-fs.mkdir('./temp_chunks', { recursive: true }, (err) => {if (err) throw err})
+fs.mkdirSync('./temp_chunks', { recursive: true }, (err) => {if (err) throw err})
 
 console.log([
     `_______________________________________________________`,
