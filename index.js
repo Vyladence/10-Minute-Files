@@ -278,11 +278,15 @@ app.post("/upload-file", (req, res, next) => {
     } else {
         console.log(`[${req.method} /upload-file] [${uid}] Non-browser client - sending JSON`);
 
-        res.json({
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify({
             status: "Success",
-            filename: originalFileName,
-            download: fileLink
-        }, null, 2);
+            filename: file.name,
+            uid: uid,
+            download: fileLink,
+            valid_until: Date.now() + 10 * 60 * 1000,
+            size: fm.byteNumberToName(file.size)
+        }, null, 2) + "\n");
 
         console.log(`[${req.method} /upload-file] [${uid}] Response sent (JSON)`);
     }
