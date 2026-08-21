@@ -236,11 +236,16 @@ app.post("/upload-file", (req, res, next) => {
 
     console.log(`[${req.method} /upload-file] [${uid}] Upload received`, JSON.stringify({ fileName: file.name }));
 
+    // Limit file duration
+    if (req.body.fileDuration < 0 || req.body.fileDuration > 24 * 60 * 60 * 1000) {
+        req.body.fileDuration = 10 * 60 * 1000;
+    }
+
     // Build FM entry
     const fmJSON = {
         size: fm.byteNumberToName(file.size),
         original_name: file.name,
-        valid_time: 10 * 60 * 1000,
+        valid_time: req.body.fileDuration || 10 * 60 * 1000,
         mv: file.mv,
     };
 
@@ -265,7 +270,7 @@ app.post("/upload-file", (req, res, next) => {
 
         data = {}
         data.fileLink = fileLink
-        data.fileDuration = 10 * 60 * 1000
+        data.fileDuration = req.body.fileDuration || 10 * 60 * 1000
         data.fileUploadedAt = Date.now()
         data.fileUID = uid
         data.serverTime = Date.now()
@@ -284,7 +289,7 @@ app.post("/upload-file", (req, res, next) => {
             filename: file.name,
             uid: uid,
             download: fileLink,
-            valid_until: Date.now() + 10 * 60 * 1000,
+            valid_until: Date.now() + req.body.fileDuration || 10 * 60 * 1000,
             size: fm.byteNumberToName(file.size)
         }, null, 2) + "\n");
 

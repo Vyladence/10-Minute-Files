@@ -66,6 +66,7 @@ function setupFormSubmit() {
 		}
 
 		formData.append('mainFile', file);
+		formData.append('fileDuration', 60 * 1000)
 
 		var xhr = new XMLHttpRequest();
 

@@ -53,10 +53,14 @@ function countdown(durationMs, element) {
   }
 
 formatAsTime = (num) => {
-    min = Math.floor(num / 60)
+	hr = Math.floor(num / 3600)
+    min = Math.floor((num - hr * 3600) / 60)
     sec = num % 60
 
-    return(`${min}:${pad(sec)}`)
+    if (hr) {
+		return(`${hr}:${pad(min)}:${pad(sec)}`)
+	}
+	return(`${min}:${pad(sec)}`)
 }
 
 function pad(d) {
