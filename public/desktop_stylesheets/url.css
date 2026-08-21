@@ -80,21 +80,6 @@ input:focus {
   background-color: #333
 }
 
-.copied-alert-div {
-  display: flex;
-  font-size: 12px;
-  color: #fff;
-  background-color: #161616;
-  border-radius: 5px;
-  padding-inline: 8px;
-  padding-block: 4px;
-  margin-top: -26px;
-  margin-bottom: 5px;
-  margin-inline: auto;
-  transition: 100ms;
-  z-index: 1;
-}
-
 #page-mask {
   background: rgba(0, 0, 0, 0.6);
   position: fixed;
