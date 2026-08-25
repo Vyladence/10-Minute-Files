@@ -55,7 +55,7 @@ class FileManager {
             const now = Date.now();
         
             for (const [uid, file] of this.#currentFiles) {
-                const expiresAt = file.uploaded_at + file.valid_time;
+                const expiresAt = Number(file.uploaded_at) + Number(file.valid_time);
         
                 if (now >= expiresAt) {
                     this.removeFile(uid)

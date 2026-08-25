@@ -226,6 +226,7 @@ app.post("/upload-file", (req, res, next) => {
     next();
 }, fileUploadMiddleware, (req, res) => {
     const uid = req.uploadUID;
+    const fileDuration = Number(req.body?.fileDuration) || 10 * 60 * 1000
 
     if (!req.files) {
         console.log(`[${req.method} /upload-file] [${uid}] No file uploaded`);
@@ -237,17 +238,15 @@ app.post("/upload-file", (req, res, next) => {
     console.log(`[${req.method} /upload-file] [${uid}] Upload received`, JSON.stringify({ fileName: file.name }));
 
     // Limit file duration
-    if (req && req.body && req.body.fileDuration) {
-        if (req.body.fileDuration < 0 || req.body.fileDuration > 24 * 60 * 60 * 1000) {
-            req.body.fileDuration = 10 * 60 * 1000;
-        }
+    if (fileDuration < 0 || fileDuration > 24 * 60 * 60 * 1000) {
+        fileDuration = 10 * 60 * 1000;
     }
 
     // Build FM entry
     const fmJSON = {
         size: fm.byteNumberToName(file.size),
         original_name: file.name,
-        valid_time: req.body.fileDuration || 10 * 60 * 1000,
+        valid_time: fileDuration,
         mv: file.mv,
     };
 
@@ -272,7 +271,7 @@ app.post("/upload-file", (req, res, next) => {
 
         data = {}
         data.fileLink = fileLink
-        data.fileDuration = req.body.fileDuration || 10 * 60 * 1000
+        data.fileDuration = fileDuration
         data.fileUploadedAt = Date.now()
         data.fileUID = uid
         data.serverTime = Date.now()
@@ -291,7 +290,7 @@ app.post("/upload-file", (req, res, next) => {
             filename: file.name,
             uid: uid,
             download: fileLink,
-            valid_until: Date.now() + req.body.fileDuration || 10 * 60 * 1000,
+            valid_until: Date.now() + fileDuration,
             size: fm.byteNumberToName(file.size)
         }, null, 2) + "\n");
 
