@@ -237,8 +237,10 @@ app.post("/upload-file", (req, res, next) => {
     console.log(`[${req.method} /upload-file] [${uid}] Upload received`, JSON.stringify({ fileName: file.name }));
 
     // Limit file duration
-    if (req.body.fileDuration < 0 || req.body.fileDuration > 24 * 60 * 60 * 1000) {
-        req.body.fileDuration = 10 * 60 * 1000;
+    if (req.body.fileDuration) {
+        if (req.body.fileDuration < 0 || req.body.fileDuration > 24 * 60 * 60 * 1000) {
+            req.body.fileDuration = 10 * 60 * 1000;
+        }
     }
 
     // Build FM entry
